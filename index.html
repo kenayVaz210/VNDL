@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Troque "VNDL" pelo nome real da marca (também em js/script.js -> BRAND_NAME) -->
+  <title>VNDL — Streetwear Independente</title>
+  <meta name="description" content="VNDL: streetwear independente. Oversized tees, hoodies, cargos e acessórios. Not made to fit in.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Caminho relativo: html/ -> ../css/ -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="#home" class="logo" data-brand>VNDL</a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link">Home</a></li>
+          <li><a href="#shop" class="nav__link">Shop</a></li>
+          <li><a href="#collections" class="nav__link">Collections</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Pesquisar">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="icon-btn" id="accountBtn" aria-label="Conta">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+        </button>
+        <button class="icon-btn icon-btn--cart" id="cartToggle" aria-label="Abrir carrinho">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Barra de pesquisa expansível -->
+    <div class="search-bar" id="searchBar">
+      <input type="search" id="searchInput" placeholder="Buscar peça, categoria..." aria-label="Pesquisar produtos">
+      <button class="search-bar__close" id="searchClose" aria-label="Fechar pesquisa">✕</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero__media"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__kicker">Drop 04 — Inverno 2026</p>
+        <h1 class="hero__title">Not made<br>to <em>fit in.</em></h1>
+        <p class="hero__text">Streetwear independente feito na rua, para a rua. Lotes limitados, sem reposição.</p>
+        <a href="#shop" class="btn btn--red">Explore the drop</a>
+      </div>
+      <div class="hero__stamp" aria-hidden="true">EST.<br>2021</div>
+    </section>
+
+    <!-- ===== FAIXA MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Not made to fit in ✦ Lotes limitados ✦ Produção local ✦ Sem reposição ✦ </span>
+        <span>Not made to fit in ✦ Lotes limitados ✦ Produção local ✦ Sem reposição ✦ </span>
+      </div>
+    </div>
+
+    <!-- ===== NEW DROP ===== -->
+    <section class="section" id="new-drop">
+      <header class="section__head reveal">
+        <p class="kicker">Acabou de chegar</p>
+        <h2 class="section__title">New drop</h2>
+      </header>
+      <div class="product-grid" id="newDropGrid"></div>
+    </section>
+
+    <!-- ===== BEST SELLERS ===== -->
+    <section class="section section--alt" id="best-sellers">
+      <header class="section__head reveal">
+        <p class="kicker">Os mais pedidos</p>
+        <h2 class="section__title">Best sellers</h2>
+      </header>
+      <div class="product-grid" id="bestSellersGrid"></div>
+    </section>
+
+    <!-- ===== MANIFESTO ===== -->
+    <section class="manifesto" id="about">
+      <div class="manifesto__inner reveal">
+        <p class="kicker kicker--red">Manifesto</p>
+        <h2 class="manifesto__title">A rua não pede<br>permissão.</h2>
+        <p class="manifesto__text">A <strong data-brand>VNDL</strong> nasceu no concreto: entre pistas de skate, muros grafitados e sessões de som que terminam de madrugada. Não fazemos roupa para agradar algoritmo — fazemos peça para quem vive a cidade do próprio jeito.</p>
+        <p class="manifesto__text">Cada drop é produzido em lote limitado, com estampa autoral e costura reforçada. Quando acaba, acabou. Sem reposição, sem reprise, sem saudade.</p>
+        <ul class="manifesto__stats">
+          <li><strong>2021</strong><span>Fundação</span></li>
+          <li><strong>04</strong><span>Drops</span></li>
+          <li><strong>100%</strong><span>Independente</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== BANNER COLEÇÃO LIMITADA ===== -->
+    <section class="promo" id="collections">
+      <div class="promo__media" aria-hidden="true"></div>
+      <div class="promo__content reveal">
+        <p class="kicker">Coleção limitada</p>
+        <h2 class="promo__title">Capsule<br>"Concrete"</h2>
+        <p class="promo__text">300 unidades. Numeração bordada. Nunca mais.</p>
+        <a href="#shop" class="btn btn--light">Ver a capsule</a>
+      </div>
+    </section>
+
+    <!-- ===== SHOP / CATÁLOGO ===== -->
+    <section class="section" id="shop">
+      <header class="section__head reveal">
+        <p class="kicker">Catálogo completo</p>
+        <h2 class="section__title">Shop all</h2>
+      </header>
+      <div class="filters reveal" role="group" aria-label="Filtrar por categoria">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="oversized">Oversized Tees</button>
+        <button class="filter-btn" data-filter="hoodies">Hoodies</button>
+        <button class="filter-btn" data-filter="baggy">Baggy Pants</button>
+        <button class="filter-btn" data-filter="cargo">Cargo Pants</button>
+        <button class="filter-btn" data-filter="jackets">Jackets</button>
+        <button class="filter-btn" data-filter="caps">Caps</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+      </div>
+      <p class="shop__empty" id="shopEmpty" hidden>Nenhuma peça encontrada. Tente outra busca ou filtro.</p>
+      <div class="product-grid product-grid--shop" id="shopGrid"></div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__col footer__col--brand">
+        <a href="#home" class="logo logo--footer" data-brand>VNDL</a>
+        <p class="footer__slogan">Not made to fit in.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="TikTok">TT</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="Spotify">SP</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <p>contato@vndl.com.br</p>
+        <p>(11) 98888-0000</p>
+      </div>
+      <div class="footer__col">
+        <h4>Base</h4>
+        <p>Galpão 07 — Barra Funda<br>São Paulo, SP</p>
+        <p>Seg a Sáb · 11h às 20h</p>
+      </div>
+      <div class="footer__col">
+        <h4>Info</h4>
+        <p>Trocas em até 30 dias</p>
+        <p>Frete grátis acima de R$ 399</p>
+        <p>Pix com 5% off</p>
+      </div>
+    </div>
+    <p class="footer__bottom">© <span id="year"></span> <span data-brand>VNDL</span> — Not made to fit in. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- ===== MODAL DE PRODUTO ===== -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <section class="product-modal" id="productModal" aria-hidden="true" role="dialog" aria-label="Detalhes do produto">
+    <button class="product-modal__close" id="modalClose" aria-label="Fechar">✕</button>
+    <div class="product-modal__media">
+      <img id="modalImg" src="" alt="">
+      <span class="product-modal__tag" id="modalTag"></span>
+    </div>
+    <div class="product-modal__info">
+      <p class="kicker" id="modalCategory"></p>
+      <h3 class="product-modal__name" id="modalName"></h3>
+      <p class="product-modal__price" id="modalPrice"></p>
+      <p class="product-modal__desc" id="modalDesc"></p>
+
+      <div class="product-modal__sizes">
+        <p class="product-modal__label">Tamanho</p>
+        <div class="sizes" id="modalSizes" role="group" aria-label="Tamanhos"></div>
+      </div>
+
+      <div class="product-modal__qty">
+        <p class="product-modal__label">Quantidade</p>
+        <div class="qty qty--large">
+          <button id="qtyDec" aria-label="Diminuir">−</button>
+          <span id="qtyValue">1</span>
+          <button id="qtyInc" aria-label="Aumentar">+</button>
+        </div>
+      </div>
+
+      <button class="btn btn--red btn--block" id="modalAdd">Add to cart</button>
+
+      <ul class="product-modal__shipping">
+        <li>✦ Envio em até 48h úteis</li>
+        <li>✦ Frete grátis acima de R$ 399</li>
+        <li>✦ Troca grátis em até 30 dias</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== CARRINHO (GAVETA LATERAL) ===== -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart" id="cart" aria-label="Carrinho de compras" aria-hidden="true">
+    <header class="cart__head">
+      <h3>Sua bag</h3>
+      <button class="cart__close" id="cartClose" aria-label="Fechar carrinho">✕</button>
+    </header>
+    <ul class="cart__items" id="cartItems"></ul>
+    <footer class="cart__foot">
+      <div class="cart__total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button class="btn btn--red btn--block" id="checkoutBtn">Finalizar compra</button>
+      <button class="cart__clear" id="clearCart">Esvaziar bag</button>
+    </footer>
+  </aside>
+
+  <!-- Notificação rápida (toast) -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Caminho relativo: html/ -> ../js/ -->
+  <script src="./js/script.js"></script>
+</body>
+</html>
